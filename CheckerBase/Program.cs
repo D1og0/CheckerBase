@@ -62,6 +62,7 @@ namespace BoltPanel
             }
 
             Console.Clear();
+            ASCII();
 
             Utils.print("How many threads do you want to use", "\n");
             Utils.print(">", "");
@@ -83,6 +84,7 @@ namespace BoltPanel
             }
 
             Console.Clear();
+            ASCII();
 
             Utils.print("Do you want to use webhook? (Y/N | default: No)", "\n");
             Utils.print(">", "");
