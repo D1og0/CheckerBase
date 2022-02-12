@@ -151,7 +151,8 @@ namespace BoltPanel
 
         public static void check()
         {
-            for (;;) {
+            while (Thread.CurrentThread.IsAlive)
+            { 
                 using (var req = new HttpRequest())
                 {
                     try
