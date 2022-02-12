@@ -116,7 +116,7 @@ namespace BoltPanel
         public static void UpdateConsole()
         {
             var lastChecks = totalChecked;
-            for (; ; )
+             while(Thread.CurrentThread.IsAlive)
             {
                 cpm = totalChecked - lastChecks;
                 lastChecks = totalChecked;
