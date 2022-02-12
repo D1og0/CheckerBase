@@ -122,7 +122,6 @@ namespace BoltPanel
                 lastChecks = totalChecked;
                 Console.Clear();
                 Console.WriteLine("");
-                Utils.Ascii();
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.Write("    [", Color.White);
