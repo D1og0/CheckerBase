@@ -14,22 +14,6 @@ namespace BoltPanel
 {
     internal class Utils
     {
-        public static void Ascii()
-        {
-            Console.WriteLine("                                          ██████╗  ██████╗ ██╗  ████████╗",
-                Color.Purple);
-            Console.WriteLine("                                          ██╔══██╗██╔═══██╗██║  ╚══██╔══╝",
-                Color.Purple);
-            Console.WriteLine("                                          ██████╔╝██║   ██║██║     ██║   ",
-                Color.Purple);
-            Console.WriteLine("                                          ██╔══██╗██║   ██║██║     ██║   ",
-                Color.Purple);
-            Console.WriteLine("                                          ██████╔╝╚██████╔╝███████╗██║   ",
-                Color.Purple);
-            Console.WriteLine("                                          ╚═════╝  ╚═════╝ ╚══════╝╚═╝   ",
-                Color.Purple);
-        }
-
         public static void print(string prefix, string description)
         {
             Console.Write("    [", Color.White);
