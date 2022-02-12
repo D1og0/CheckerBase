@@ -144,6 +144,8 @@ namespace BoltPanel
                 Console.Write("INFO", Color.Green);
                 Console.Write("] discord.gg/DiogoAlts \n",Color.White);
 
+                Console.Title = "DiogoBase - Hits: " + hits + " | Fails: " + fails + " | Errors: " + errors + " CPM: " + cpm;
+
                 Thread.Sleep(1000);
             }
         }
@@ -187,7 +189,7 @@ namespace BoltPanel
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    errors++;
                 }
             }
         }
