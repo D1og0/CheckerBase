@@ -25,6 +25,8 @@ namespace BoltPanel
         static void Main(string[] args)
         {
             #region startup
+            ASCII();
+
             Utils.print("Select Combo", "");
             ComboLoad();
 
@@ -59,6 +61,8 @@ namespace BoltPanel
                 break;
             }
 
+            Console.Clear();
+
             Utils.print("How many threads do you want to use", "\n");
             Utils.print(">", "");
             bool validInput = false;
@@ -77,6 +81,8 @@ namespace BoltPanel
                     Console.Write("]\n", Color.White);
                 }
             }
+
+            Console.Clear();
 
             Utils.print("Do you want to use webhook? (Y/N | default: No)", "\n");
             Utils.print(">", "");
@@ -121,6 +127,7 @@ namespace BoltPanel
                 cpm = totalChecked - lastChecks;
                 lastChecks = totalChecked;
                 Console.Clear();
+                ASCII();
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -196,6 +203,22 @@ namespace BoltPanel
             }
         }
 
+        public static void ASCII()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("              ██████╗ ██╗ █████╗  ██████╗  █████╗ ██████╗  █████╗  ██████╗███████╗", Color.Purple);
+            Console.WriteLine("              ██╔══██╗██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝", Color.Purple);
+            Console.WriteLine("              ██║  ██║██║██║  ██║██║  ██╗ ██║  ██║██████╦╝███████║╚█████╗ █████╗", Color.Purple);
+            Console.WriteLine("              ██║  ██║██║██║  ██║██║  ╚██╗██║  ██║██╔══██╗██╔══██║ ╚═══██╗██╔══╝", Color.Purple);
+            Console.WriteLine("              ██████╔╝██║╚█████╔╝╚██████╔╝╚█████╔╝██████╦╝██║  ██║██████╔╝███████╗", Color.Purple);
+            Console.WriteLine("              ╚═════╝ ╚═╝ ╚════╝  ╚═════╝  ╚════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝", Color.Purple);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+
         public static void ComboLoad()
         {
             string fileName;
@@ -215,8 +238,8 @@ namespace BoltPanel
                 combos = new List<string>(File.ReadAllLines(fileName));
                 Combototal = combos.Count();
                 Console.Write("Selected ", Color.White);
-                Console.Write(Proxytotal, Color.Purple);
-                Console.Write(" Proxies\n\n", Color.White);
+                Console.Write(Combototal, Color.Purple);
+                Console.Write(" Combos\n\n", Color.White);
             });
             x.SetApartmentState(ApartmentState.STA);
             x.Start();
