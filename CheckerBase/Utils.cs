@@ -47,7 +47,7 @@ namespace BoltPanel
                                 icon_url =
                                     "https://cdn.discordapp.com/icons/781049455831023616/56dac6e51b6887b8d4a87ee724ba929a.webp?size=128",
                                 text =
-                                    $"[CheckerBase] | [HITS] {Program.hits} - [FAILS] {Program.fails} - [TOTAL] {Program.totalTested}"
+                                    $"[CheckerBase] | [HITS] {Program.hits} - [FAILS] {Program.fails} - [TOTAL] {Program.totalChecked}"
                             }
                         }
                     }
