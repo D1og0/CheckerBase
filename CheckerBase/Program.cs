@@ -166,9 +166,9 @@ namespace BoltPanel
                 {
                     try
                     {
+                        Interlocked.Increment(ref comboIndex);
                         string proxy = proxies.ElementAt<string>(new Random().Next(proxies.Count));
                         var array = combos[comboIndex].Split(':', ';', '|');
-                        Interlocked.Increment(ref comboIndex);
 
                         totalChecked++;
 
