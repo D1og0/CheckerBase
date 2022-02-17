@@ -189,7 +189,9 @@ namespace BoltPanel
                         }
 
                         req.UserAgent = Http.RandomUserAgent();
-
+                        httpRequest.IgnoreProtocolErrors = true;
+                        httpRequest.AllowAutoRedirect = true;
+                        httpRequest.KeepAlive = true;
                         // Hit
                         hits++;
                         Utils.AsResult("/Module_Name", array[0] + ":" + array[1]);
